@@ -9,33 +9,27 @@ class CalculatorApp {
     this.register = "";
     this.result = 0.0;
     this.display_element.display(0);
-    console.log("Clear");
   }
 
   // Used when an operation is entered
   pushRegister() {
-    this.result = this.register;
+    this.result = parseFloat(this.register);
     this.register = "";
   }
 
   enter_digit(digit) {
     this.register += String(digit);
-    console.log(
-      "Digit entered: " + digit + ", register is now " + this.register
-    );
-    this.display_element.display(this.register);
+    this.display_element.display(parseFloat(this.register));
   }
 
   decimal() {
     this.register += ".";
-    console.log("Decimal entered, register is now " + this.register);
     this.display_element.display(this.register);
   }
 
   add_op() {
     this.current_op = "add";
     this.pushRegister();
-    console.log("Current op is now add");
   }
 
   sub_op() {
@@ -44,31 +38,29 @@ class CalculatorApp {
     // then we will interpret the register as negative
     if (this.current_op != "null" && this.register == "") {
       this.register += "-";
-      console.log(
-        "Sub entered with non-null op and empty register, register is now " +
-          this.register
-      );
-      this.display_element.display(this.register);
+      this.display_element.display(parseFloat(this.register));
     } else {
       this.current_op = "sub";
       this.pushRegister();
-      console.log("Current op is now sub");
     }
   }
 
   mul_op() {
     this.current_op = "mul";
     this.pushRegister();
-    console.log("Current op is now mul");
   }
 
   div_op() {
     this.current_op = "div";
     this.pushRegister();
-    console.log("Current op is now div");
   }
 
   enter() {
+    // Do nothing for empty register
+    if (this.register == "" || this.registor == "-") {
+      return;
+    }
+
     var old_result = this.result;
     var old_register = parseFloat(this.register);
     var new_result = old_result;
@@ -81,20 +73,9 @@ class CalculatorApp {
     } else if (this.current_op == "div") {
       new_result = old_result / old_register;
     }
-    console.log(
-      "enter, old_result: " +
-        old_result +
-        " old_register: " +
-        old_register +
-        " current_op: " +
-        this.current_op +
-        " new_result: " +
-        new_result
-    );
     this.result = new_result;
-    this.register = "";
-    this.current_op = "null";
-    this.display_element.display(new_result);
+    this.register = String(new_result);
+    this.display_element.display(this.result);
   }
 }
 
@@ -116,6 +97,7 @@ function digit_callback(calculator, digit) {
   };
 }
 
+// Helper function for binding a callback to a button
 function bindButton(document, id, callback) {
   var button = document.getElementById(id);
   if (button == null) {
@@ -125,6 +107,7 @@ function bindButton(document, id, callback) {
   button.addEventListener("click", callback);
 }
 
+// Create an instance of CalculatorApp and bind it to an svg_document
 function bindCalculatorApp(svg_document) {
   var display_element = svg_document.getElementById("display");
   if (display_element == null) {
@@ -140,6 +123,8 @@ function bindCalculatorApp(svg_document) {
     var button_name = "button_" + digit;
     bindButton(svg_document, button_name, digit_callback(calculator, digit));
   }
+
+  // All the other buttons
   bindButton(svg_document, "button_decimal", function() {
     calculator.decimal();
   });
@@ -161,8 +146,6 @@ function bindCalculatorApp(svg_document) {
   bindButton(svg_document, "button_clear", function() {
     calculator.clear();
   });
-
-  console.log("binding calculator app complete");
 }
 
 function init() {
@@ -172,6 +155,8 @@ function init() {
     return;
   }
 
+  // We don't can't bind the calculator app
+  // until the svg is loaded
   svg_object.addEventListener(
     "load",
     function() {
@@ -184,8 +169,6 @@ function init() {
     },
     false
   );
-
-  console.log("init done");
 }
 
 init();
