@@ -1,0 +1,81 @@
+<svg width="375" height="667" viewBox="0 0 375 667" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+     text { font: normal 50px serif; fill: black; }
+</style>
+<rect width="375" height="667" fill="white"/>
+<rect x="8" y="7" width="359" height="653" rx="31" fill="#EEEDED"/>
+<rect x="14" y="14" width="344" height="187" rx="31" fill="#DCD9D9"/>
+<text id="display" text-anchor="end" alignment-baseline="central" transform="translate(317.5,157.5)">0</text>
+<g id ="button_clear" transform="translate(143.5,246.5)" fill="#EDD390">
+  <rect x="-87" y="-34.5" width="174" height="69"/>
+  <circle cx="-87" r="34.5"/>
+  <circle cx="87" r="34.5"/>
+  <text text-anchor="middle" alignment-baseline="central">C</text>
+</g>
+<g id="button_0" transform="translate(56.5,602.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <circle cx="88" r="34.5" fill="#90918F"/>
+  <rect y="-34.5" width="88" height="69" fill="#90908F"/>
+  <text text-anchor="middle" alignment-baseline="central">0</text>
+</g>
+<g id="button_1" transform="translate(56.5,513.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">1</text>
+</g>
+<g id="button_2" transform="translate(143.5,513.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">2</text>
+</g>
+<g id="button_3" transform="translate(230.5,513.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">3</text>
+</g>
+<g id="button_4" transform="translate(56.5,424.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">4</text>
+</g>
+<g id="button_5" transform="translate(143.5,424.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">5</text>
+</g>
+<g id="button_6" transform="translate(230.5,424.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">6</text>
+</g>
+<g id="button_7" transform="translate(56.5,335.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">7</text>
+</g>
+<g id="button_8" transform="translate(143.5,335.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">8</text>
+</g>
+<g id="button_9" transform="translate(230.5,335.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">9</text>
+</g>
+<g id="button_decimal" transform="translate(230.5,602.5)">
+  <circle r="34.5" fill="#90918F"/>
+  <text text-anchor="middle" alignment-baseline="central">.</text>
+</g>
+<g id="button_enter" transform="translate(317.5,602.5)">
+  <circle r="34.5" fill="#BC705F"/>
+  <text text-anchor="middle" alignment-baseline="central">=</text>
+</g>
+<g id="button_add" transform="translate(317.5,513.5)">
+  <circle r="34.5" fill="#BC705F"/>
+  <text text-anchor="middle" alignment-baseline="central">+</text>
+</g>
+<g id="button_sub" transform="translate(317.5,424.5)">
+  <circle r="34.5" fill="#BC705F"/>
+  <text text-anchor="middle" alignment-baseline="central">-</text>
+</g>
+<g id="button_mul" transform="translate(317.5,335.5)">
+  <circle r="34.5" fill="#BC705F"/>
+  <text text-anchor="middle" alignment-baseline="central">X</text>
+</g>
+<g id="button_div" transform="translate(317.5,246.5)">
+  <circle r="34.5" fill="#BC705F"/>
+  <text text-anchor="middle" alignment-baseline="central">/</text>
+</g>
+</svg>
